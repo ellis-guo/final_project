@@ -1,0 +1,47 @@
+{
+  "algorithm_params": {
+    "exercises_per_day": 5,
+    "exhaustive_threshold": 10,
+    "max_2opt_iterations": 100
+  },
+  "scoring_weights": {
+    "primary_muscle": {
+      "base_score": 3.0
+    },
+    "secondary_muscle": {
+      "base_score": 2.0
+    },
+    "common_exercise_bonus": {
+      "score": 2.0
+    }
+  },
+  "position_scores": {
+    "major_muscle": {
+      "scores": [8, 5, 0, 0, 0]
+    },
+    "minor_muscle": {
+      "scores": [0, 0, 0, 5, 8]
+    },
+    "compound": {
+      "scores": [8, 5, 0, 0, 0]
+    },
+    "isolation": {
+      "scores": [0, 0, 0, 5, 8]
+    },
+    "free_weight": {
+      "scores": [3, 2, 0, 0, 0]
+    },
+    "equipment": {
+      "scores": [0, 0, 0, 2, 3]
+    }
+  },
+  "diversity_rules": {
+    "balance_threshold": 3,
+    "balance_penalty": -3,
+    "penalties": {
+      "same_family": -10,
+      "weekly_repeat": -8,
+      "same_muscle_group": -1
+    }
+  }
+}

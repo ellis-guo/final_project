@@ -214,8 +214,8 @@ Contributions are welcome! Please:
 
 ## 👨‍💻 Author
 
-**Ellis Guo**
-**Clarisse**
+**Ellis Guo**,
+**Clarisse**,
 **Difan**
 
 - Northeastern University CS5800 Algorithms Final Project

@@ -36,12 +36,12 @@ class BaseSelector(ABC):
 
     # Muscle group preference coefficients (0.1-10.0, default: 1.0)
     MUSCLE_PREFERENCES = {
-        "chest": 1.0,
-        "back": 1.0,
-        "shoulder": 1.0,
-        "arm": 1.0,
-        "leg": 1.0,
-        "core": 1.0
+        "chest": 1.5,
+        "back": 0.6,
+        "shoulder": 0.6,
+        "arm": 0.6,
+        "leg": 0.6,
+        "core": 0.6
     }
 
     # Excluded exercise IDs

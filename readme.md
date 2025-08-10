@@ -1,238 +1,227 @@
-# Intelligent Fitness Plan Generator
+# 🏋️ Intelligent Fitness Plan Generator
 
-An advanced exercise selection system that generates personalized weekly workout plans using intelligent algorithms and scientific training principles.
+> One-click personalized weekly workout plans powered by intelligent algorithms and exercise science
 
-## Features
+## ✨ Features
 
-- **Smart Algorithm Selection**: Automatically chooses between exhaustive search (for small problems) and greedy optimization (for large problems)
-- **Scientific Training Templates**: 1-7 day training splits based on exercise science principles
-- **Multi-Dimensional Scoring**: Evaluates exercises across 6 classification dimensions
-- **Personalized Preferences**: Adjustable muscle group coefficients for customized plans
-- **Diversity Optimization**: Ensures balanced workouts with variety in movement patterns
+- 🚀 **One-Click Launch** - No installation required, just double-click and go
+- 🧬 **Smart Algorithms** - Adaptive selection between exhaustive/greedy/hybrid approaches
+- 📊 **Scientific Scoring** - 6-dimensional evaluation with multi-layer optimization
+- 🎯 **Personalization** - Support for 1-7 training days with muscle group preferences
+- 💪 **Professional Templates** - Science-based training splits for all fitness levels
 
-## Quick Start
+## 🚀 Quick Start (30 seconds)
 
-```bash
-# Run the system
-python main.py
+### Easiest Method: Direct Run
 
-# The system will:
-# 1. Display current configuration
-# 2. Generate optimized weekly plan
-# 3. Show execution time and scores
-# 4. Optionally display detailed workout plan
+1. Download `WorkoutPlanner.exe`
+2. Double-click to run
+3. Browser opens automatically - start training!
+
+**That's it!** No Python, no configuration needed.
+
+## 📸 Screenshots
+
+![Interface](./images/screenshot1.png)
+
+## 🎮 User Guide
+
+### Three Ways to Run
+
+#### Option 1: Standalone Program (Recommended for Users)
+
+```
+Run dist/WorkoutPlanner.exe directly
 ```
 
-## Project Structure
+#### Option 2: Web Interface (For Developers)
+
+```bash
+python app.py
+# Visit http://localhost:5000
+```
+
+#### Option 3: Command Line (For Debugging)
+
+```bash
+python main.py
+```
+
+### How to Use
+
+1. Select training days (1-7 days)
+2. Set muscle group priorities (drag sliders, levels 1-5)
+3. Click "Generate Workout Plan"
+4. Review your generated plan
+5. Click exercise names for detailed instructions
+
+## 🧠 Core Algorithms
+
+### Intelligent Algorithm Selection
+
+- **Small Scale (≤10 candidates)**: Exhaustive search, guarantees global optimum
+- **Large Scale (>10 candidates)**: Greedy + 2-opt optimization, fast near-optimal solution
+
+### Performance Benchmarks
+
+| Candidates | Algorithm    | Runtime | Solution Quality |
+| ---------- | ------------ | ------- | ---------------- |
+| 5          | Exhaustive   | <0.01s  | Optimal          |
+| 10         | Exhaustive   | ~2s     | Optimal          |
+| 30+        | Greedy+2-opt | <0.1s   | Near-optimal     |
+
+## 📊 Scientific Scoring System
+
+### Multi-Dimensional Evaluation
+
+- **Major/Minor Muscle Classification** - Proper training focus distribution
+- **Compound/Isolation Balance** - Comprehensive muscle stimulation
+- **Free Weight/Machine Mix** - Balance between stability and safety
+- **Movement Pattern Diversity** - Avoid repetition, maximize effectiveness
+- **Position Optimization** - Exercise order based on fatigue management
+- **Weekly Deduplication** - Prevent overtraining
+
+### Scoring Formula
+
+#### Static Score (Position-Independent)
+
+- Primary muscles: `3.0 ÷ muscle_count × preference_coefficient`
+- Secondary muscles: `2.0 ÷ muscle_count × preference_coefficient`
+- Common exercise bonus: `+2.0`
+
+#### Dynamic Score (Position-Dependent)
+
+- **Position Bonuses**: Compound exercises front-loaded, isolation exercises back-loaded
+- **Diversity Penalties**: `-3` points when exceeding threshold
+- **Repetition Penalties**: `-10` for same movement family
+
+## 🏗️ Project Structure
 
 ```
 final_project/
-├── algorithms/
-│   ├── __init__.py              # Package initialization
-│   ├── base_selector.py         # Abstract base class with shared logic
-│   ├── greedy_selector.py       # Greedy algorithm implementation
-│   └── hybrid_selector.py       # Adaptive hybrid algorithm
-├── classification/
-│   ├── categoryMapping.json     # Exercise-to-muscle mapping
-│   ├── preferenceMapping.json   # Muscle group categories
-│   ├── trainingTemplates.json   # Training split templates
-│   ├── type1_isMajor.json      # Major/minor muscle classification
-│   ├── type2_isCompound.json   # Compound/isolation classification
-│   ├── type3_isSingle.json     # Bilateral/unilateral classification
-│   ├── type4_isMachine.json    # Free weight/machine classification
-│   ├── type5_isCommon.json     # Common/uncommon exercises
-│   └── type6_movementFamily.json # Movement pattern families
-├── config.json                  # Algorithm configuration
-├── strength.json                # Database of 340 exercises
-├── main.py                      # Main entry point
-└── README.md                    # This file
+├── dist/
+│   └── WorkoutPlanner.exe     # Standalone executable
+├── algorithms/                # Core algorithms
+│   ├── base_selector.py       # Base class with shared logic
+│   ├── greedy_selector.py     # Greedy algorithm
+│   └── hybrid_selector.py     # Adaptive hybrid algorithm
+├── classification/            # Exercise classification data
+│   ├── categoryMapping.json   # Exercise-to-muscle mapping
+│   ├── trainingTemplates.json # Training split templates
+│   └── type1-6_*.json         # 6-dimensional classifications
+├── templates/                 # Web interface templates
+├── static/                    # Static resources
+├── strength.json              # Database of 340 exercises
+├── config.json                # Algorithm configuration
+├── app.py                     # Flask web application
+└── main.py                    # Command line entry point
 ```
 
-## Configuration
+## 🛠️ Tech Stack
 
-### User Settings (in base_selector.py)
+- **Backend**: Python 3.6+
+- **Algorithms**: Combinatorial optimization, Greedy, 2-opt
+- **Web Framework**: Flask
+- **Frontend**: HTML/CSS/JavaScript
+- **Packaging**: PyInstaller
+- **Data**: JSON (340 professional exercises)
+
+## 📈 Algorithm Performance Comparison
+
+(Chart needed: Time-Quality tradeoff curves for different algorithms at various scales)
+
+### Test Results Summary
+
+- **Greedy vs Hybrid**: 5-10% quality improvement, 2-3x time overhead
+- **Greedy vs 2-opt**: 3-5% quality improvement, 50% time increase
+- **Exhaustive Search**: Guarantees global optimum for small problems
+
+## 🎯 Training Templates
+
+7 science-based training splits available:
+
+1. **1 Day**: Full Body
+2. **2 Days**: Upper/Lower Split
+3. **3 Days**: Push/Pull/Legs (PPL)
+4. **4 Days**: Push/Pull × 2
+5. **5 Days**: Bro Split (Chest, Legs, Back, Shoulders, Arms)
+6. **6 Days**: Push/Pull/Legs × 2
+7. **7 Days**: Push/Pull/Legs × 2 + Rest
+
+## 💡 Use Cases
+
+- 💪 **Fitness Enthusiasts**: Get professional, personalized workout plans
+- 👨‍💻 **Developers**: Learn combinatorial optimization implementations
+- 🏋️ **Personal Trainers**: Quickly generate client programs
+- 📚 **Students**: Algorithm course project reference
+
+## 🔧 Advanced Configuration
+
+### User Preferences (base_selector.py)
 
 ```python
-# Training days per week (1-7)
+# Training days per week
 TRAINING_DAYS = 5
 
-# Muscle group preferences (0.1-10.0, default: 1.0)
+# Muscle group preference coefficients (0.3-1.5)
 MUSCLE_PREFERENCES = {
-    "chest": 1.2,    # 20% bonus
-    "back": 1.0,     # Normal
-    "shoulder": 1.0,
-    "arm": 1.0,
-    "leg": 0.8,      # 20% reduction
-    "core": 1.0
+    "chest": 0.9,   # Standard weight (Tier 3)
+    "back": 0.9,
+    "shoulder": 0.3,# Minimal training (Tier 1)
+    "arm": 0.9,
+    "leg": 1.5,     # Intensive training (Tier 5)
+    "core": 0.9
 }
 
 # Excluded exercise IDs
-EXCLUDED_EXERCISES = {35, 42}  # Example IDs to exclude
+EXCLUDED_EXERCISES = {35, 42}
 ```
 
-### Algorithm Settings (config.json)
+### Algorithm Parameters (config.json)
 
 ```json
 {
   "algorithm_params": {
     "exercises_per_day": 5,
-    "exhaustive_threshold": 10, // Switch point between algorithms
+    "exhaustive_threshold": 10,
     "max_2opt_iterations": 100
   }
 }
 ```
 
-## Training Templates
+## 📝 Development Documentation
 
-The system supports 7 different training splits:
+### Adding New Exercises
 
-1. **1 Day**: Full Body
-2. **2 Days**: Upper/Lower Split
-3. **3 Days**: Push/Pull/Legs
-4. **4 Days**: Push/Pull × 2
-5. **5 Days**: Bro Split (Chest, Legs, Back, Shoulders, Arms)
-6. **6 Days**: Push/Pull/Legs × 2
-7. **7 Days**: Push/Pull/Legs × 2 + Active Recovery
+1. Edit `strength.json` to add exercise information
+2. Update classification files in `classification/`
+3. Run tests to ensure proper categorization
 
-## Scoring System
+### Implementing New Algorithms
 
-### Static Score (Position-Independent)
+1. Inherit from `BaseSelector` class
+2. Implement `_select_exercises_for_day` method
+3. Register new algorithm in `main.py`
 
-- Primary muscles: 3.0 ÷ num_muscles × preference
-- Secondary muscles: 2.0 ÷ num_muscles × preference
-- Common exercise bonus: +2.0
+## 🤝 Contributing
 
-### Dynamic Score (Position-Dependent)
+Contributions are welcome! Please:
 
-#### Layer 1: Position Bonuses
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
 
-| Exercise Type | Pos 1 | Pos 2 | Pos 3 | Pos 4 | Pos 5 |
-| ------------- | ----- | ----- | ----- | ----- | ----- |
-| Major Muscle  | +8    | +5    | 0     | 0     | 0     |
-| Minor Muscle  | 0     | 0     | 0     | +5    | +8    |
-| Compound      | +8    | +5    | 0     | 0     | 0     |
-| Isolation     | 0     | 0     | 0     | +5    | +8    |
-| Free Weight   | +3    | +2    | 0     | 0     | 0     |
-| Machine       | 0     | 0     | 0     | +2    | +3    |
+## 👨‍💻 Author
 
-#### Layer 2: Diversity Penalties
+**Ellis Guo**
+**Clarisse**
+**Difan**
 
-- Balance threshold: 3 exercises
-- Penalty for exceeding: -3 points
+- Northeastern University CS5800 Algorithms Final Project
 
-#### Layer 3: Repetition Penalties
+## 🙏 Acknowledgments
 
-- Same movement family: -10
-- Weekly repetition: -8
-- Muscle group overlap: -1 per overlap
-
-## Algorithm Details
-
-### Greedy Selector
-
-- **Time Complexity**: O(n × 5)
-- **Space Complexity**: O(n)
-- **Strategy**: Selects best exercise for each position sequentially
-
-### Hybrid Selector
-
-- **Adaptive Strategy**:
-  - n ≤ 10: Complete exhaustive search (O(C(n,5) × 120))
-  - n > 10: Greedy + 2-opt optimization
-- **Guarantees**: Global optimum for small problems, good solutions for large problems
-
-## Performance Benchmarks
-
-Based on testing with 340 exercises:
-
-| Candidates | Algorithm    | Time   | Quality      |
-| ---------- | ------------ | ------ | ------------ |
-| 5          | Exhaustive   | <0.01s | Optimal      |
-| 10         | Exhaustive   | ~1s    | Optimal      |
-| 15         | Exhaustive   | ~15s   | Optimal      |
-| 20         | Exhaustive   | ~80s   | Optimal      |
-| 30+        | Greedy+2-opt | <0.1s  | Near-optimal |
-
-## Example Output
-
-```
-CURRENT CONFIGURATION:
-----------------------------------------
-Training Days: 5
-Algorithm: Hybrid (Adaptive)
-Exhaustive Threshold: 10 candidates
-
-RESULTS SUMMARY
-----------------------------------------
-Generation Time: 0.156 seconds
-
-Daily Scores:
-Day 1   : 5 exercises | Score:  67.45
-Day 2   : 5 exercises | Score:  62.30
-Day 3   : 5 exercises | Score:  71.20
-Day 4   : 5 exercises | Score:  65.80
-Day 5   : 5 exercises | Score:  69.15
-----------------------------------------
-Total   : 25 exercises | Score: 335.90
-```
-
-## Requirements
-
-- Python 3.6+
-- No external dependencies (uses only Python standard library)
-
-## Usage Examples
-
-### Basic Usage
-
-```python
-from algorithms import HybridSelector
-
-# Create selector
-selector = HybridSelector()
-
-# Generate plan
-plan = selector.generate_weekly_plan()
-
-# Display results
-selector.print_detailed_plan(plan)
-```
-
-### Custom Configuration
-
-```python
-from algorithms import HybridSelector
-
-selector = HybridSelector()
-
-# Customize settings
-selector.TRAINING_DAYS = 3
-selector.MUSCLE_PREFERENCES = {
-    "chest": 1.5,  # 50% more chest focus
-    "back": 1.2,
-    "shoulder": 1.0,
-    "arm": 0.8,
-    "leg": 1.0,
-    "core": 0.5   # 50% less core
-}
-
-# Exclude specific exercises
-selector.EXCLUDED_EXERCISES = {35, 42, 108}
-
-# Generate customized plan
-plan = selector.generate_weekly_plan()
-```
-
-## License
-
-MIT License
-
-## Author
-
-Developed as part of an intelligent fitness planning system project.
-
-## Acknowledgments
-
-- Exercise database includes 340 professionally curated exercises
-- Training templates based on established exercise science principles
-- Scoring system designed to optimize workout quality and variety
+- Professional exercise database from https://github.com/longhaul-fitness/exercises.git
+- Exercise science training principles
+- Combinatorial optimization theory

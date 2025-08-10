@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intelligent Workout Planner</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🏋️ Intelligent Workout Planner</h1>
+        <p>Clarisse, Difan, Ellis</p>
+      </div>
+
+      <!-- Control Panel -->
+      <div class="control-panel">
+        <h2>⚙️ Configuration</h2>
+
+        <!-- Training Days -->
+        <div class="form-group">
+          <label for="training-days">Training Days per Week</label>
+          <select id="training-days" class="form-control">
+            <option value="1">1 Day - Full Body</option>
+            <option value="2">2 Days - Upper/Lower</option>
+            <option value="3">3 Days - Push/Pull/Legs</option>
+            <option value="4">4 Days - Upper/Lower ×2</option>
+            <option value="5" selected>5 Days - Bro Split</option>
+            <option value="6">6 Days - PPL ×2</option>
+            <option value="7">7 Days - PPL ×2 + Rest</option>
+          </select>
+        </div>
+
+        <!-- Muscle Tiers -->
+        <div class="form-group">
+          <label>
+            Muscle Group Priority
+            <span class="form-sublabel"
+              >(1=Minimal training, 5=Intensive training)</span
+            >
+          </label>
+          <div class="muscle-grid">
+            <!-- Chest -->
+            <div class="muscle-item">
+              <div class="muscle-name">Chest</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="chest" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="chest" data-tier="2">
+                  2
+                </button>
+                <button
+                  class="tier-btn active"
+                  data-muscle="chest"
+                  data-tier="3"
+                >
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="chest" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="chest" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+
+            <!-- Back -->
+            <div class="muscle-item">
+              <div class="muscle-name">Back</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="back" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="back" data-tier="2">
+                  2
+                </button>
+                <button
+                  class="tier-btn active"
+                  data-muscle="back"
+                  data-tier="3"
+                >
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="back" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="back" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+
+            <!-- Shoulder -->
+            <div class="muscle-item">
+              <div class="muscle-name">Shoulder</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="shoulder" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="shoulder" data-tier="2">
+                  2
+                </button>
+                <button
+                  class="tier-btn active"
+                  data-muscle="shoulder"
+                  data-tier="3"
+                >
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="shoulder" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="shoulder" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+
+            <!-- Arms -->
+            <div class="muscle-item">
+              <div class="muscle-name">Arms</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="arm" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="arm" data-tier="2">
+                  2
+                </button>
+                <button class="tier-btn active" data-muscle="arm" data-tier="3">
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="arm" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="arm" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+
+            <!-- Legs -->
+            <div class="muscle-item">
+              <div class="muscle-name">Legs</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="leg" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="leg" data-tier="2">
+                  2
+                </button>
+                <button class="tier-btn active" data-muscle="leg" data-tier="3">
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="leg" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="leg" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+
+            <!-- Core -->
+            <div class="muscle-item">
+              <div class="muscle-name">Core</div>
+              <div class="tier-buttons">
+                <button class="tier-btn" data-muscle="core" data-tier="1">
+                  1
+                </button>
+                <button class="tier-btn" data-muscle="core" data-tier="2">
+                  2
+                </button>
+                <button
+                  class="tier-btn active"
+                  data-muscle="core"
+                  data-tier="3"
+                >
+                  3
+                </button>
+                <button class="tier-btn" data-muscle="core" data-tier="4">
+                  4
+                </button>
+                <button class="tier-btn" data-muscle="core" data-tier="5">
+                  5
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="btn-container">
+          <button class="btn" id="generate-btn" onclick="generatePlan()">
+            Generate Workout Plan
+          </button>
+          <button class="btn btn-secondary" onclick="resetTiers()">
+            Reset All
+          </button>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> This tool is for informational purposes
+          only. Consult a qualified healthcare professional before starting any
+          exercise program.
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="results-container" class="results-container">
+        <!-- Statistics -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-exercises">0</div>
+            <div class="stat-label">Total Exercises</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-days">0</div>
+            <div class="stat-label">Training Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-score">0</div>
+            <div class="stat-label">Total Score</div>
+          </div>
+        </div>
+
+        <!-- Workout Plan Display -->
+        <div class="workout-plan">
+          <h2>📋 Your Personalized Weekly Plan</h2>
+          <div id="plan-display"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

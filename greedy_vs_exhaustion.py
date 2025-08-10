@@ -23,12 +23,12 @@ class SmallSampleExhaustiveTester:
         self.selector = HybridSelector()
         self.training_days = 1
         self.preferences = {
-            "chest": 1.0,
-            "back": 1.0,
-            "shoulder": 1.0,
-            "arm": 1.0,
-            "leg": 1.0,
-            "core": 1.0
+            "chest": 0.9,
+            "back": 0.9,
+            "shoulder": 0.9,
+            "arm": 0.9,
+            "leg": 0.9,
+            "core": 0.9
         }
 
     def run_test(self):

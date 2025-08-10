@@ -22,7 +22,7 @@
 
 ## 📸 Screenshots
 
-![Interface](https://github.com/ellis-guo/final_project/blob/main/images/screenshot.png)
+![Interface](https://github.com/ellis-guo/final_project/blob/main/images/interface.png)
 
 ## 🎮 User Guide
 

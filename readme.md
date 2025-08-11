@@ -85,7 +85,7 @@ python main.py
 ## 📊 Test Results & Analysis
 
 For detailed algorithm performance comparisons and workout plan quality assessments, see our comprehensive test results in:
-- **📄 [Test Results Sample Document](test_result_sample.pdf)** - Contains program output examples and validation against exercise science guidelines
+- **📄 [Test Results Sample Document](test_result_samples.pdf)** - Contains program output examples and validation against exercise science guidelines
 
 
 ## 📊 Scientific Scoring System

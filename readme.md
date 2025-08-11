@@ -55,6 +55,17 @@ python main.py
 4. Review your generated plan
 5. Click exercise names for detailed instructions
 
+
+## 📋 System Components
+
+### Key Interfaces
+
+- **Command-line interface (main.py)**: Displays daily workout scores and total metrics; users can enter 'y' to view detailed exercise selections
+- **Configuration module (base_selector.py)**: Sets user parameters including training days, muscle group coefficients, and excluded exercises
+- **Web interface (app.py)**: Provides graphical interface with 5-tier muscle priority system for real-time plan generation
+- **Standalone executable (WorkoutPlanner.exe)**: Packaged with PyInstaller, runs without Python installation by launching local Flask server and auto-opening browser
+
+
 ## 🧠 Core Algorithms
 
 ### Intelligent Algorithm Selection
@@ -69,6 +80,13 @@ python main.py
 | 5          | Exhaustive   | <0.01s  | Optimal          |
 | 10         | Exhaustive   | ~2s     | Optimal          |
 | 30+        | Greedy+2-opt | <0.1s   | Near-optimal     |
+
+
+## 📊 Test Results & Analysis
+
+For detailed algorithm performance comparisons and workout plan quality assessments, see our comprehensive test results in:
+- **📄 [Test Results Sample Document](test_result_sample.pdf)** - Contains program output examples and validation against exercise science guidelines
+
 
 ## 📊 Scientific Scoring System
 
@@ -110,6 +128,7 @@ final_project/
 │   ├── trainingTemplates.json # Training split templates
 │   └── type1-6_*.json         # 6-dimensional classifications
 ├── templates/                 # Web interface templates
+├── test_result_sample.pdf     # Result tables
 ├── static/                    # Static resources
 ├── strength.json              # Database of 340 exercises
 ├── config.json                # Algorithm configuration
@@ -127,8 +146,7 @@ final_project/
 - **Data**: JSON (340 professional exercises)
 
 ## 📈 Algorithm Performance Comparison
-
-(Chart needed: Time-Quality tradeoff curves for different algorithms at various scales)
+Time-Quality tradeoff curves for different algorithms at various scales
 
 ### Test Results Summary
 
@@ -174,7 +192,7 @@ MUSCLE_PREFERENCES = {
 }
 
 # Excluded exercise IDs
-EXCLUDED_EXERCISES = {35, 42}
+EXCLUDED_EXERCISES = {...}
 ```
 
 ### Algorithm Parameters (config.json)
@@ -214,14 +232,14 @@ Contributions are welcome! Please:
 
 ## 👨‍💻 Author
 
-**Ellis Guo**,
-**Clarisse**,
-**Difan**
+**[Ellis Guo](https://github.com/ellis-guo)**,
+**[Clarisse Li](https://github.com/clarisseli)**,
+**Difan Xie**
 
 - Northeastern University CS5800 Algorithms Final Project
 
 ## 🙏 Acknowledgments
 
 - Professional exercise database from https://github.com/longhaul-fitness/exercises.git
-- Exercise science training principles
+- Exercise science training guidelines from ACSM and NASM
 - Combinatorial optimization theory
